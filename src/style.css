@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-light: #f7f7f7;
+  --ff-montserrat: "Montserrat", sans-serif;
+  --fs-large: 2.5rem;
+  --fs-medium: 2rem;
+  --fs-regular: 1.5rem;
+  --fs-small: 1rem;
+  --fw-bold: 700;
+  --fw-regular: 500;
+  --fw-thin: 300;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 1px 2px black;
+}
+
+body {
+  background: url("./assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--clr-light);
+  font-family: var(--ff-montserrat);
+}
+
+i {
+  font-size: var(--fs-medium);
+}
+
+.main-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: auto 180px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "info details"
+    "forecast forecast";
+  padding: 3em;
+}
+
+.weather-info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+}
+
+.weather-details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.details-card {
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+
+.forecast {
+  grid-area: forecast;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.forecast-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: #f7f7f7;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.search {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px var(--clr-light);
+  color: #f7f7f7;
+  padding: 0.3em;
+}
+
+.search::placeholder {
+  color: #f7f7f7;
+}
+
+.btn > i {
+  font-size: var(--fs-small);
+}
+
+/* -------- Utility classes -------*/
+
+.fs-large {
+  font-size: var(--fs-large);
+}
+
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+
+.fs-regular {
+  font-size: var(--fs-regular);
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-thin {
+  font-weight: var(--fw-thin);
+}
+
+.icon-large {
+  font-size: calc(var(--fs-large) * 1.5);
+}
+
+.icon-small {
+  font-size: var(--fs-medium);
+}
+
+/* ------------------------------- */
+
+@media screen and (max-width: 800px) {
+  body {
+    --fs-large: 1.5rem;
+    --fs-medium: 1.25rem;
+    --fs-regular: 1rem;
+    --fs-small: 0.75rem;
+  }
+
+  .main-container {
+    grid-template-columns: auto 150px;
+    padding: 2em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .forecast {
+    grid-area: forecast;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    margin-top: 2em;
+  }
+}

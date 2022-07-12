@@ -4,9 +4,109 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/3f76d30d04.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js" defer></script>
     <title>Weather APP</title>
   </head>
-  <body></body>
+  <body>
+    <div class="main-container">
+      <div class="weather-info">
+        <div class="fs-large fw-regular">Light Rain</div>
+        <div class="fs-medium">Auckland</div>
+        <div class="fs-small">Tuesday, 5th Jul'22</div>
+        <div class="fs-small">11:09 am</div>
+        <div class="fs-large fw-bold">13 °C</div>
+        <div>
+          <button class="btn fw-regular">Change to °F</button>
+        </div>
+        <i class="fa-solid fa-cloud-rain icon-large"></i>
+        <div class="search-container">
+          <input
+            class="search"
+            type="text"
+            placeholder="Search Location"
+            name=""
+            id=""
+          />
+          <button class="btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="weather-details">
+        <div class="details-card">
+          <div><i class="fa-solid fa-temperature-half"></i></div>
+          <div>
+            <div>Feels Like</div>
+            <div class="fs-regular fw-regular">12 °C</div>
+          </div>
+        </div>
+        <div class="details-card">
+          <div><i class="fa-solid fa-droplet"></i></div>
+          <div>
+            <div>Humidity</div>
+            <div class="fs-regular fw-regular">96 %</div>
+          </div>
+        </div>
+        <div class="details-card">
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+          <div>
+            <div>Chance of Rain</div>
+            <div class="fs-regular fw-regular">1 %</div>
+          </div>
+        </div>
+        <div class="details-card">
+          <div><i class="fa-solid fa-wind"></i></div>
+          <div>
+            <div>Wind Speed</div>
+            <div class="fs-regular fw-regular">3.2 km/h</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="forecast">
+        <div class="forecast-card">
+          <div>Wednesday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="forecast-card">
+          <div>Thursday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="forecast-card">
+          <div>Friday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="forecast-card">
+          <div>Saturday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="forecast-card">
+          <div>Sunday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="forecast-card">
+          <div>Monday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+        <div class="forecast-card">
+          <div>Tuesday</div>
+          <div class="fs-medium fw-regular">15 °C</div>
+          <div><i class="fa-solid fa-cloud-rain"></i></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
