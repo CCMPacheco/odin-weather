@@ -16,15 +16,15 @@
   <body>
     <div class="main-container">
       <div class="weather-info">
-        <div class="fs-large fw-regular">Light Rain</div>
-        <div class="fs-medium">Auckland</div>
-        <div class="fs-small">Tuesday, 5th Jul'22</div>
-        <div class="fs-small">11:09 am</div>
-        <div class="fs-large fw-bold">13 °C</div>
+        <div class="fs-large fw-regular" data-weather></div>
+        <div class="fs-medium" data-city></div>
+        <div class="fs-small" data-date></div>
+        <div class="fs-small" data-time></div>
+        <div class="fs-large fw-bold" data-temp-current></div>
         <div>
           <button class="btn fw-regular">Change to °F</button>
         </div>
-        <i class="fa-solid fa-cloud-rain icon-large"></i>
+        <div data-large-icon></div>
         <div class="search-container">
           <input
             class="search"
@@ -44,69 +44,33 @@
           <div><i class="fa-solid fa-temperature-half"></i></div>
           <div>
             <div>Feels Like</div>
-            <div class="fs-regular fw-regular">12 °C</div>
+            <div class="fs-regular fw-regular" data-feels-like></div>
           </div>
         </div>
         <div class="details-card">
           <div><i class="fa-solid fa-droplet"></i></div>
           <div>
             <div>Humidity</div>
-            <div class="fs-regular fw-regular">96 %</div>
+            <div class="fs-regular fw-regular" data-humidity></div>
           </div>
         </div>
         <div class="details-card">
           <div><i class="fa-solid fa-cloud-rain"></i></div>
           <div>
             <div>Chance of Rain</div>
-            <div class="fs-regular fw-regular">1 %</div>
+            <div class="fs-regular fw-regular" data-chance-rain></div>
           </div>
         </div>
         <div class="details-card">
           <div><i class="fa-solid fa-wind"></i></div>
           <div>
             <div>Wind Speed</div>
-            <div class="fs-regular fw-regular">3.2 km/h</div>
+            <div class="fs-regular fw-regular" data-wind></div>
           </div>
         </div>
       </div>
 
-      <div class="forecast">
-        <div class="forecast-card">
-          <div>Wednesday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-        <div class="forecast-card">
-          <div>Thursday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-        <div class="forecast-card">
-          <div>Friday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-        <div class="forecast-card">
-          <div>Saturday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-        <div class="forecast-card">
-          <div>Sunday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-        <div class="forecast-card">
-          <div>Monday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-        <div class="forecast-card">
-          <div>Tuesday</div>
-          <div class="fs-medium fw-regular">15 °C</div>
-          <div><i class="fa-solid fa-cloud-rain"></i></div>
-        </div>
-      </div>
+      <div class="forecast" data-forecast></div>
     </div>
   </body>
 </html>
