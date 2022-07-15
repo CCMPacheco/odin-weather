@@ -4,13 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/3f76d30d04.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js" defer></script>
     <title>Weather APP</title>
   </head>
   <body>
@@ -22,7 +19,7 @@
         <div class="fs-small" data-time></div>
         <div class="fs-large fw-bold" data-temp-current></div>
         <div>
-          <button class="btn fw-regular">Change to °F</button>
+          <button class="btn fw-regular" data-convert>Change to °F</button>
         </div>
         <div data-large-icon></div>
         <div class="search-container">
@@ -30,10 +27,10 @@
             class="search"
             type="text"
             placeholder="Search Location"
-            name=""
-            id=""
+            name="search"
+            id="search"
           />
-          <button class="btn">
+          <button class="btn" data-btn-search>
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -72,5 +69,6 @@
 
       <div class="forecast" data-forecast></div>
     </div>
+    <div id="loading"></div>
   </body>
 </html>

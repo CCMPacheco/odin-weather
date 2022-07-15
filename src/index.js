@@ -1,5 +1,5 @@
-//import "./normalize.css";
-//import "./style.css";
+import "./normalize.css";
+import "./style.css";
 
 const API_KEY = "8502f1df647a4ceda4c53ab7275395b5";
 const IMPERIAL = "imperial";
@@ -39,12 +39,53 @@ const ICONS = {
   "overcast clouds": '<i class="fa-solid fa-cloud icon-large"></i>',
   "shower rain": '<i class="fa-solid fa-cloud-showers-heavy icon-large"></i>',
   "light rain": '<i class="fa-solid fa-cloud-showers-heavy icon-large"></i>',
+  "moderate rain": '<i class="fa-solid fa-cloud-showers-heavy icon-large"></i>',
   rain: '<i class="fa-solid fa-cloud-rain icon-large"></i>',
   thunderstorm: '<i class="fa-solid fa-cloud-bolt icon-large"></i>',
   snow: '<i class="fa-solid fa-snowflake icon-large"></i>',
   mist: '<i class="fa-solid fa-smog icon-large"></i>',
+  smoke: '<i class="fa-solid fa-smog icon-large"></i>',
 };
 const weekday = { day: "" };
+const currentCity = { city: "tucuman" };
+
+const loader = document.getElementById("loading");
+const convertBtn = document.querySelector("[data-convert]");
+const search = document.getElementById("search");
+const searchBtn = document.querySelector("[data-btn-search]");
+
+convertBtn.addEventListener("click", () => {
+  if (convertBtn.textContent === "Change to °F") {
+    convertBtn.textContent = "Change to °C";
+    displayLoading();
+    getData(currentCity.city, changeUnits()).then(() => hideLoading());
+  } else if (convertBtn.textContent === "Change to °C") {
+    convertBtn.textContent = "Change to °F";
+    displayLoading();
+    getData(currentCity.city, changeUnits()).then(() => hideLoading());
+  }
+});
+
+searchBtn.addEventListener("click", () => {
+  const city = search.value.trim();
+  currentCity.city = city;
+  displayLoading();
+  getData(currentCity.city, changeUnits()).then(() => hideLoading());
+  search.value = "";
+});
+
+function displayLoading() {
+  loader.classList.add("display");
+}
+
+function hideLoading() {
+  loader.classList.remove("display");
+}
+
+function changeUnits() {
+  if (convertBtn.textContent === "Change to °F") return METRIC;
+  if (convertBtn.textContent === "Change to °C") return IMPERIAL;
+}
 
 async function getData(location, unit) {
   try {
@@ -127,6 +168,7 @@ async function getTimeAndDate(timezone, daily, unit) {
 
 function forecast(daily, unit) {
   const main = document.querySelector("[data-forecast]");
+  main.textContent = "";
 
   for (let i = 0; i < 7; i++) {
     if (weekday.day > 6) {
@@ -178,4 +220,9 @@ function createCard(day, tempmax, tempmin, icon, unit) {
   return card;
 }
 
-getData("tucuman", METRIC);
+function initialize() {
+  displayLoading();
+  getData(currentCity.city, changeUnits()).then(() => hideLoading());
+}
+
+initialize();
