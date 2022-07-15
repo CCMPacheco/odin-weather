@@ -136,7 +136,7 @@ async function getData(location, unit) {
 async function getTimeAndDate(timezone, daily, unit) {
   try {
     const response = await fetch(
-      `http://worldtimeapi.org/api/timezone/${timezone}`
+      `https://worldtimeapi.org/api/timezone/${timezone}`
     );
     const time = await response.json();
     weekday.day = time["day_of_week"];
