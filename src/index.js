@@ -128,8 +128,6 @@ async function getData(location, unit) {
     wind.textContent = `${weatherData.current["wind_speed"]} ${UNITS.distance[unit]}`;
 
     getTimeAndDate(weatherData.timezone, weatherData.daily, unit);
-    console.log(cityData);
-    console.log(weatherData);
   } catch (error) {
     console.log(error);
   }
